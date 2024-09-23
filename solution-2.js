@@ -16,9 +16,9 @@ class Pet {
     this.razza = razza;
   }
 
-  checkSameProp(anotherPet) {
-    if (this.nameProp === anotherPet.nameProp) {
-      return true;
+  checkSameProp(newPet) {
+    if (this.nameProp === newPet.nameProp) {
+    return  console.log("questo proprietario ha piu di un animale");
     } else {
       return false;
     }
@@ -26,7 +26,7 @@ class Pet {
 }
 
 const renderList = function () {
-  petList.innerHTML = ""; 
+  petList.innerHTML = "";
   pets.forEach((pet) => {
     const newLi = document.createElement("li");
     newLi.innerText = "Nome: " + pet.namePet + ", proprietario: " + pet.nameProp + ", specie: " + pet.species + ", razza: " + pet.razza;
@@ -37,9 +37,9 @@ const renderList = function () {
 addButton.onclick = function () {
   let newPet = new Pet(namePetField.value, namePropField.value, speciesField.value, razzaField.value);
   pets.push(newPet);
-  renderList()
-  namePetField.value = ""; 
+  renderList();
+  namePetField.value = "";
   namePropField.value = "";
-  speciesField.value = ""; 
+  speciesField.value = "";
   razzaField.value = "";
-}
+};
